@@ -142,10 +142,16 @@ class _ItemsListScreenState extends State<ItemsListScreen> {
             ),
             title: Hero(
               tag: 'title-${items[index]['id']}',
-              child: Text(
-                items[index]['title'],
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              child: Material(
+                type:
+                    MaterialType.transparency, // Make sure the text stays black
+                child: Text(
+                  items[index]['title'],
+                  style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
               ),
             ),
             subtitle: Text('UserID: ${items[index]['userId']}'),

@@ -13,7 +13,16 @@ class DetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Hero(
           tag: 'title-${item?['id']}',
-          child: Text(item?['title'] ?? 'Item Details'),
+          child: Material(
+            type: MaterialType.transparency, // Ensure text stays black
+            child: Text(
+              item?['title'] ?? 'Item Details',
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  overflow: TextOverflow.ellipsis),
+            ),
+          ),
         ),
       ),
       body: Container(
